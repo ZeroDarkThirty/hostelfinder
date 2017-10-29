@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row template">
+    <div class="col-md-8">
+      <!-- CAROUSEL -->
+      <app-carousel></app-carousel>
+    </div>
+    <div class="col-md-4">
+      <table class="table table-responsive table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Room Details</th>
+            <th>Charges</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Furnishing: {{hostel.furnished == true ? "Yes" : "No"}}</td>
+            <td>Weekly Rent: ${{hostel.rate}}</td>
+          </tr>
+          <tr>
+            <td>Availability: {{hostel.availability}}</td>
+            <td>Bond: $500</td>
+          </tr>
+          <tr>
+            <td>Length of Stay: Flexible</td>
+            <td>Bills: Included</td>
+          </tr>
+          <tr>
+            <td>Parking: Off the street</td>
+            <td>Internet: Included</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- MODAL -->
+      <app-modal></app-modal>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>{{hostel.address}}</h3>
+        <p>Rate: $ {{hostel.rate}}</p>
+        <div class="row">
+          <div class="col-md-4 icon">
+            <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+            <p>1 bed</p>
+          </div>
+          <div class="col-md-4 icon">
+            <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+            <p>Shower</p>
+          </div>
+          <div class="col-md-4 icon">
+            <i class="fa fa-car fa-3x" aria-hidden="true"></i>
+            <p>Parking</p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Description</div>
+          <div class="panel-body">{{hostel.description}}</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>

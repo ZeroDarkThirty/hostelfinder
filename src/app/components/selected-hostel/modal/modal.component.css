@@ -1,0 +1,10 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+#bookedModalCorners{
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    background-color: rgba(8, 187, 97, 1.5)
+}
