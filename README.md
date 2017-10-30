@@ -1,4 +1,4 @@
-# HostelHunt
+# HostelFinder
 
 Please be sure to run `npm install` to install dependencies before starting development server.
 
