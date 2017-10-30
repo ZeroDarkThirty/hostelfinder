@@ -1,6 +1,6 @@
 # HostelHunt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Please be sure to run `npm install` to install dependencies before starting development server.
 
 ## Development server
 
