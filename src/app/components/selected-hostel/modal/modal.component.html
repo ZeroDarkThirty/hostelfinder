@@ -1,13 +1,21 @@
-<button class="btn btn-success btn-lg btn-group-justified" data-toggle="modal" data-target="#myModal">BOOK NOW!</button>
+<button [disabled]="f.submitted" class="btn btn-success btn-lg btn-group-justified" data-toggle="modal" data-target="#myModal">BOOK NOW!</button>
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="name" class="form-control" id="fullname" placeholder="Enter full name" name="fullname" ngModel required>
+          <div class="form-group" *ngIf="!f.submitted; else elseBlock">
+            <div class="row">
+              <div class="col-sm-6">
+                <label>First Name</label>
+                <input type="name" class="form-control" id="firstname" placeholder="Enter full name" name="firstname" ngModel required>
+              </div>
+              <div class="col-sm-6">
+                <label>Last Name</label>
+                <input type="name" class="form-control" id="lastname" placeholder="Enter full name" name="lastname" ngModel required>
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-sm-6">
@@ -57,7 +65,7 @@
                 </div>
             </div>
             <hr>
-            <!-- BILLING -->
+            
             <p>Billing Options</p>
             <div class="row">
               <div class="col-sm-6">
@@ -101,24 +109,21 @@
               </div>
             </div>
           </div>
-          <!-- <button type="submit" class="btn btn-primary">Confirm Booking</button> -->
-          <button [disabled]="!f.valid" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#bookedModal" data-dismiss="modal">
-            Confirm Booking
-          </button>
+          <button [disabled]="!f.valid" type="submit" class="btn btn-success" *ngIf="!f.submitted">Confirm Booking</button>
         </form>
+        <ng-template #elseBlock>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <p id="confirm" style="text-align: center; margin-top:20px">Congratulations {{formDetail.firstname}}! Your booking was successful!</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" *ngIf="!f.submitted">
         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- BOOKED MODAL -->
-<div id="bookedModal" class="modal fade" role="dialog">
-  <div class="modal-content" id="bookedModalCorners">
-    <div class="modal-body">
-      <p style="text-align: center">Your booking was successful!</p>
     </div>
   </div>
 </div>

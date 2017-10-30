@@ -32,11 +32,7 @@ video {
 }
 
 h1 span, h3 span{
-    background: rgba(218, 218, 218, 0.8);
-}
-
-h3 span{
-    /* display: block; */
+    background: rgba(179, 183, 185, 0.7);
 }
 
 .row {

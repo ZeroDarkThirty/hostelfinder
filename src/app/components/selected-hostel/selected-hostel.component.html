@@ -33,6 +33,7 @@
       </table>
       <p style="text-align:center">Contact: {{hostel.contact.name}} @ {{hostel.contact.phone}}</p>
       <p style="text-align:center">OR</p>
+      {{formDetails}}
       <!-- MODAL -->
       <app-modal></app-modal>
     </div>
@@ -40,7 +41,7 @@
     <div class="row">
       <div class="col-md-8">
         <h3>{{hostel.address}}</h3>
-        <p>Rate: $ {{hostel.rate}}</p>
+        <p>Rate: ${{hostel.rate}} pw</p>
         <div class="row">
           <div class="col-md-4 icon">
             <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
