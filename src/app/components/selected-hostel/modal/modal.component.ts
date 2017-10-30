@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import  { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -8,10 +9,13 @@ import { NgForm } from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
   @ViewChild('f') submittedForm: NgForm;
-  constructor() { }
+  details;
+
+  constructor(private _router: Router) { }
 
   onSubmit(){
     console.log(this.submittedForm.value);
+    this.details = this.submittedForm.value;
     this.submittedForm.reset();
   }
 

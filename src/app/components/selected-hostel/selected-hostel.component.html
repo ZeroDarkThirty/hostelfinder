@@ -22,15 +22,17 @@
             <td>Bond: $500</td>
           </tr>
           <tr>
-            <td>Length of Stay: Flexible</td>
-            <td>Bills: Included</td>
+            <td>Length of Stay: {{hostel.lengthOfStay}}</td>
+            <td>Bills: {{hostel.utility}}</td>
           </tr>
           <tr>
-            <td>Parking: Off the street</td>
-            <td>Internet: Included</td>
+            <td>Parking: {{hostel.parking}}</td>
+            <td>Internet: {{hostel.internet}}</td>
           </tr>
         </tbody>
       </table>
+      <p style="text-align:center">Contact: {{hostel.contact.name}} @ {{hostel.contact.phone}}</p>
+      <p style="text-align:center">OR</p>
       <!-- MODAL -->
       <app-modal></app-modal>
     </div>

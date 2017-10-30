@@ -1,0 +1,31 @@
+<!-- Main Jumbotron -->
+<div class="jumbotron" id="video-container">
+    <video id="video-background" preload muted autoplay loop>
+      <source src="../../../assets/vids/bannervid.mp4">
+    </video>
+  <div class="container" id="jumbo-text">
+    <div class="center">
+      <div class="row">
+          <h1 style="text-color: white"><strong><span>HostelFinder</span></strong></h1>
+          <h3>
+            <span>Australia's biggest provider of student housing</span>
+          </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="list-group col-md-4" *ngFor="let details of hostelDetails; let i = index">
+      <a role="button" class="list-group-item" (click)="selectedHostel(details)">
+        <img src="{{details.image}}" alt="#" class="img-responsive">
+        <p>
+          <strong>Rate: ${{details.rate}} pw</strong>
+        </p>
+        <p>{{details.address}} <span class="label label-primary">Available</span></p>
+        <p>Furnished room, available immediately ideally for students.</p>
+      </a>
+    </div>
+  </div>
+</div>

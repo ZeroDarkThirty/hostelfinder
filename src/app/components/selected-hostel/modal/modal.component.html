@@ -1,6 +1,6 @@
 <button class="btn btn-success btn-lg btn-group-justified" data-toggle="modal" data-target="#myModal">BOOK NOW!</button>
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
@@ -13,43 +13,98 @@
               <div class="col-sm-6">
                 <label>Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email" ngModel required
-                pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/">
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <!-- <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email address</span> -->
               </div>
               <div class="col-sm-6">
                 <label>Phone</label>
-                <input type="phone" class="form-control" id="exampleInputEmail1" name="phone" placeholder="Enter phone number" ngModel required>
+                <input type="phone" class="form-control" name="phone" placeholder="Enter phone number" ngModel required pattern="\d+">
               </div>
             </div>
 
-            <label>Address</label>
-            <input type="address" class="form-control" id="exampleInputEmail1" name="address" placeholder="Enter address" ngModel required>
             <div class="row">
               <div class="col-sm-6">
-                <label>City</label>
-                <input type="city" class="form-control" id="exampleInputEmail1" name="city" placeholder="Enter city" ngModel required>
+                <label>Address</label>
+                <input type="address" class="form-control" name="address" placeholder="Enter address" ngModel required>
               </div>
+              <div class="col-sm-6">
+                  <label>City</label>
+                  <input type="city" class="form-control" name="city" placeholder="Enter city" ngModel required>
+                </div>
+            </div>
+
+            <div class="row">
               <div class="col-sm-6">
                 <label>State</label>
-                <input type="state" class="form-control" id="exampleInputEmail1" name="state" placeholder="Enter state" ngModel required>
+                <input type="state" class="form-control" name="state" placeholder="Enter state" ngModel required>
+              </div>
+              <div class="col-sm-6">
+                  <label>Country</label>
+                  <select class="form-control" required name="country" ngModel required>
+                    <option>Australia</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <label>Post/Zip Code</label>
+                <input type="email" class="form-control" name="zipcode" placeholder="Enter zip code" ngModel required pattern="\d+">
+              </div>
+              <div class="col-sm-6">
+                  <label for="moveInDate">Move in date</label>
+                  <input type="date" class="form-control" name="expiryDate" ngModel required>
+                </div>
+            </div>
+            <hr>
+            <!-- BILLING -->
+            <p>Billing Options</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="">Please select payment method</label>
+                <select class="form-control required country" id="exampleSelect1" name="country" ngModel required>
+                  <option>PayPal</option>
+                  <option>Visa</option>
+                  <option>MasterCard</option>
+                </select>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="">Card Holder's Name</label>
+                <input type="text" class="form-control" name="cardHolderName" placeholder="Enter Your Name" ngModel required>
               </div>
             </div>
 
             <div class="row">
               <div class="col-sm-6">
-                <label>Country</label>
-                <select class="form-control  required country" id="exampleSelect1" name="country" ngModel required>
-                  <option>Australia</option>
-                </select>
+                <label for="">Card Number</label>
+                <input type="text" class="form-control" name="cardNumber" placeholder="Enter card number" ngModel required>
               </div>
               <div class="col-sm-6">
-                <label>Post/Zip Code</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="zipcode" placeholder="Enter zip code" ngModel required>
+                <label for="">Expiry Date</label>
+                <input type="date" class="form-control" name="expiryDate" ngModel required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="">CVC-code</label>
+                <input type="text" class="form-control" name="cvcCode" placeholder="Enter CVC-code" ngModel required pattern="\d+">
+              </div>
+              <div class="col-sm-6" style="text-align:center;">
+                <label for=""></label>
+                <p>
+                  <i class="fa fa-cc-paypal" style="font-size:48px"></i>
+                  <i class="fa fa-cc-visa" style="font-size:48px"></i>
+                  <i class="fa fa-cc-mastercard" style="font-size:48px"></i>
+                </p>
               </div>
             </div>
           </div>
           <!-- <button type="submit" class="btn btn-primary">Confirm Booking</button> -->
-          <button [disabled]="!f.valid" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#bookedModal" data-dismiss="modal">Confirm Booking</button>
+          <button [disabled]="!f.valid" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#bookedModal" data-dismiss="modal">
+            Confirm Booking
+          </button>
         </form>
       </div>
       <div class="modal-footer">
@@ -61,9 +116,9 @@
 
 <!-- BOOKED MODAL -->
 <div id="bookedModal" class="modal fade" role="dialog">
-    <div class="modal-content" id="bookedModalCorners">
-        <div class="modal-body">
-          <p style="text-align: center">Your booking was successful!</p>
-        </div>
+  <div class="modal-content" id="bookedModalCorners">
+    <div class="modal-body">
+      <p style="text-align: center">Your booking was successful!</p>
     </div>
+  </div>
 </div>
